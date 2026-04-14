@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unlimited Construction & Restoration | From Foundation to Finish | Bradenton, FL</title>
+  <meta name="description" content="Unlimited Construction & Restoration — Licensed & Insured General Contractor serving Bradenton, Sarasota, Anna Maria Island and surrounding areas. Concrete, Masonry, New Homes, Remodeling & Restoration. BBB A+ Rated. Get a free estimate today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:        #1a2f4a;
+      --navy-mid:    #243d5e;
+      --navy-light:  #2e4d76;
+      --amber:       #E07B24;
+      --amber-light: #f08c35;
+      --amber-pale:  #fdf0e3;
+      --text:        #1c1c1a;
+      --text-mid:    #444440;
+      --text-muted:  #7a7a74;
+      --border:      rgba(0,0,0,0.1);
+      --bg:          #f8f6f2;
+      --bg-card:     #ffffff;
+      --radius:      8px;
+      --radius-lg:   14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(26,47,74,0.95); backdrop-filter: blur(16px);
+      padding: 0 52px; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark {
+      width: 42px; height: 42px; background: var(--amber); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 700; color: #fff;
+    }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-name { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; color: #fff; letter-spacing: 0.5px; line-height: 1.2; }
+    .logo-sub { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 1px; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 14px; color: rgba(255,255,255,0.72); text-decoration: none; transition: color .2s; letter-spacing: 0.3px; }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-cta { background: var(--amber); color: #fff; border: none; border-radius: var(--radius); padding: 10px 22px; font-size: 14px; font-weight: 500; font-family: 'Source Sans 3', sans-serif; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s; letter-spacing: 0.3px; }
+    .nav-cta:hover { background: var(--amber-light); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      position: relative; height: 100vh; min-height: 700px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 2s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(110deg, rgba(26,47,74,0.88) 0%, rgba(26,47,74,0.55) 60%, rgba(26,47,74,0.3) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 52px; max-width: 1100px; width: 100%;
+      display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center;
+    }
+    .hero-left {}
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--amber); color: #fff;
+      font-size: 11px; font-weight: 600; padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 22px; letter-spacing: 1.2px; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 62px; font-weight: 700; line-height: 1.0;
+      color: #fff; margin-bottom: 10px; letter-spacing: -0.5px;
+    }
+    .hero h1 span { color: var(--amber); }
+    .hero-tagline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px; font-weight: 400; color: rgba(255,255,255,0.7);
+      margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .hero p { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 500px; margin-bottom: 36px; font-weight: 300; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--amber); color: #fff; border: none; border-radius: var(--radius); padding: 15px 34px; font-size: 15px; font-weight: 600; font-family: 'Source Sans 3', sans-serif; cursor: pointer; text-decoration: none; display: inline-block; transition: background .2s, transform .15s; letter-spacing: 0.3px; }
+    .btn-primary:hover { background: var(--amber-light); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); border-radius: var(--radius); padding: 15px 34px; font-size: 15px; font-family: 'Source Sans 3', sans-serif; cursor: pointer; text-decoration: none; display: inline-block; transition: border-color .2s, transform .15s; }
+    .btn-outline:hover { border-color: #fff; transform: translateY(-2px); }
+
+    /* HERO QUICK FORM */
+    .hero-form {
+      background: rgba(255,255,255,0.97); border-radius: var(--radius-lg);
+      padding: 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .hero-form h3 { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .hero-form .form-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; }
+    .bilingual-toggle { display: flex; gap: 0; margin-bottom: 16px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .lang-btn { flex: 1; padding: 7px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; font-family: 'Source Sans 3', sans-serif; transition: background .2s, color .2s; letter-spacing: 0.5px; }
+    .lang-btn.active { background: var(--navy); color: #fff; }
+    .lang-btn:not(.active) { background: #f4f4f4; color: var(--text-muted); }
+    .hf-field { margin-bottom: 11px; }
+    .hf-field label { display: block; font-size: 11px; font-weight: 600; color: var(--text-mid); margin-bottom: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .hf-field input, .hf-field select, .hf-field textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; font-family: 'Source Sans 3', sans-serif; color: var(--text); background: #fff; outline: none; transition: border-color .2s; }
+    .hf-field input:focus, .hf-field select:focus, .hf-field textarea:focus { border-color: var(--amber); }
+    .hf-field textarea { height: 72px; resize: none; }
+    .hf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hf-submit { width: 100%; background: var(--amber); color: #fff; border: none; border-radius: var(--radius); padding: 13px; font-size: 15px; font-weight: 600; font-family: 'Source Sans 3', sans-serif; cursor: pointer; margin-top: 6px; transition: background .2s; letter-spacing: 0.3px; }
+    .hf-submit:hover { background: var(--amber-light); }
+    .hf-note { font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+    .slide-dots { position: absolute; bottom: 32px; left: 52px; z-index: 3; display: flex; gap: 8px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.35); cursor: pointer; border: none; transition: background .3s, transform .3s; padding: 0; }
+    .dot.active { background: var(--amber); transform: scale(1.3); }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--navy); display: flex; justify-content: center; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.8); padding: 16px 28px; border-right: 1px solid rgba(255,255,255,0.1); font-weight: 500; }
+    .trust-item:last-child { border-right: none; }
+    .t-icon { width: 16px; height: 16px; stroke: var(--amber); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+    /* SECTIONS */
+    section { padding: 84px 52px; }
+    section.alt { background: #eeeae3; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .eyebrow { font-size: 11px; font-weight: 700; color: var(--amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+    .section-title { font-family: 'Oswald', sans-serif; font-size: 38px; font-weight: 600; margin-bottom: 44px; letter-spacing: -.3px; color: var(--navy); }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 28px; transition: transform .2s, box-shadow .2s;
+      border-top: 3px solid var(--amber);
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+    .s-icon { width: 44px; height: 44px; border-radius: var(--radius); background: var(--amber-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .s-icon svg { width: 22px; height: 22px; stroke: var(--amber); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .service-card h4 { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 8px; letter-spacing: 0.3px; }
+    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+    /* PHOTO MOSAIC */
+    .mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 5px; }
+    .mosaic-item { overflow: hidden; position: relative; }
+    .mosaic-item.big { grid-row: span 2; }
+    .mosaic-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; display: block; }
+    .mosaic-item:hover img { transform: scale(1.06); }
+    .mosaic-item .m-label {
+      position: absolute; bottom: 14px; left: 14px;
+      background: rgba(26,47,74,0.85); backdrop-filter: blur(8px);
+      color: #fff; font-size: 12px; font-weight: 600;
+      padding: 5px 13px; border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.18);
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    /* STEPS */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .step { padding: 0 28px 0 0; position: relative; }
+    .step:last-child { padding-right: 0; }
+    .step-connector { position: absolute; top: 20px; left: 42px; right: 0; height: 2px; background: var(--border); }
+    .step:last-child .step-connector { display: none; }
+    .step-num { width: 42px; height: 42px; border-radius: 50%; background: var(--amber); color: #fff; font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; position: relative; z-index: 1; }
+    .step h4 { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+    .step p { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+    /* CREDENTIALS */
+    .cred-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .cred-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; text-align: center; }
+    .cred-num { font-family: 'Oswald', sans-serif; font-size: 42px; font-weight: 700; color: var(--amber); line-height: 1; margin-bottom: 6px; }
+    .cred-label { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    /* GALLERY STRIP */
+    .gallery-strip { display: grid; grid-template-columns: repeat(5, 1fr); height: 260px; gap: 5px; }
+    .gs-item { overflow: hidden; position: relative; }
+    .gs-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+    .gs-item:hover img { transform: scale(1.08); }
+    .gs-item .gs-label {
+      position: absolute; bottom: 10px; left: 10px;
+      color: #fff; font-size: 10px; font-weight: 700;
+      background: rgba(26,47,74,0.8); backdrop-filter: blur(6px);
+      padding: 4px 10px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      letter-spacing: 0.8px; text-transform: uppercase;
+    }
+
+    /* SERVICE AREA */
+    .area-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .area-tag { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; text-align: center; }
+    .area-tag h5 { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+    .area-tag p { font-size: 11px; color: var(--text-muted); }
+
+    /* REVIEWS */
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px; border-left: 3px solid var(--amber); }
+    .stars { color: var(--amber); font-size: 15px; margin-bottom: 12px; }
+    .review-text { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin-bottom: 16px; font-weight: 300; font-style: italic; }
+    .reviewer { font-size: 13px; font-weight: 600; color: var(--navy); }
+    .reviewer-loc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    /* MAIN FORM */
+    .form-section { padding: 84px 52px; background: var(--navy); position: relative; overflow: hidden; }
+    .form-section::before {
+      content: ''; position: absolute; top: -200px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(224,123,36,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .form-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 1; }
+    .form-header { text-align: center; margin-bottom: 50px; }
+    .form-header .eyebrow { color: var(--amber); }
+    .form-header h2 { font-family: 'Oswald', sans-serif; font-size: 44px; font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: -.3px; }
+    .form-header p { font-size: 16px; color: rgba(255,255,255,0.58); line-height: 1.7; font-weight: 300; }
+
+    .form-lang-toggle { display: flex; gap: 0; margin-bottom: 28px; border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius); overflow: hidden; max-width: 280px; }
+    .flang-btn { flex: 1; padding: 10px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; font-family: 'Source Sans 3', sans-serif; transition: background .2s, color .2s; letter-spacing: 0.5px; }
+    .flang-btn.active { background: var(--amber); color: #fff; }
+    .flang-btn:not(.active) { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-grid .full { grid-column: 1 / -1; }
+    .f-field { display: flex; flex-direction: column; gap: 6px; }
+    .f-field label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: .8px; text-transform: uppercase; }
+    .f-field input, .f-field select, .f-field textarea {
+      width: 100%; padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius);
+      font-size: 14px; font-family: 'Source Sans 3', sans-serif;
+      background: rgba(255,255,255,0.07); color: #fff; outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .f-field input::placeholder, .f-field textarea::placeholder { color: rgba(255,255,255,0.28); }
+    .f-field input:focus, .f-field select:focus, .f-field textarea:focus { border-color: var(--amber); background: rgba(255,255,255,0.11); }
+    .f-field select { color: rgba(255,255,255,0.8); cursor: pointer; }
+    .f-field select option { background: var(--navy); color: #fff; }
+    .f-field textarea { height: 100px; resize: none; }
+    .form-submit { text-align: center; margin-top: 30px; }
+    .submit-btn { background: var(--amber); color: #fff; border: none; border-radius: var(--radius); padding: 16px 56px; font-size: 17px; font-weight: 700; font-family: 'Source Sans 3', sans-serif; cursor: pointer; transition: background .2s, transform .15s; letter-spacing: 0.5px; }
+    .submit-btn:hover { background: var(--amber-light); transform: translateY(-2px); }
+    .form-note { font-size: 12px; color: rgba(255,255,255,0.32); margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .form-note svg { width: 12px; height: 12px; stroke: rgba(255,255,255,0.32); fill: none; stroke-width: 2; stroke-linecap: round; }
+    .success-msg { display: none; text-align: center; padding: 52px 32px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-lg); }
+    .success-msg h3 { font-family: 'Oswald', sans-serif; font-size: 30px; color: #fff; margin-bottom: 12px; }
+    .success-msg p { color: rgba(255,255,255,0.58); font-size: 15px; }
+
+    /* CONTACT BAR */
+    .contact-bar { background: var(--amber); padding: 22px 52px; display: flex; justify-content: center; align-items: center; gap: 52px; flex-wrap: wrap; }
+    .contact-item { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .2s; }
+    .contact-item:hover { opacity: 0.85; }
+    .contact-item svg { width: 17px; height: 17px; stroke: rgba(255,255,255,0.8); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+    /* FOOTER */
+    footer { background: #0f1c2d; padding: 36px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: 'Oswald', sans-serif; font-size: 18px; color: #fff; font-weight: 600; }
+    .footer-logo span { color: var(--amber); }
+    .footer-mid { font-size: 13px; color: rgba(255,255,255,0.35); text-align: center; }
+    .footer-creds { display: flex; gap: 16px; align-items: center; }
+    .footer-badge { font-size: 12px; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-content { grid-template-columns: 1fr; padding: 0 20px; }
+      .hero-form { display: none; }
+      .hero h1 { font-size: 42px; }
+      section { padding: 56px 20px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .cred-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .step-connector { display: none; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .area-grid { grid-template-columns: 1fr 1fr; }
+      .form-section { padding: 56px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-grid .full { grid-column: 1; }
+      .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .mosaic-item.big { grid-row: span 1; height: 220px; }
+      .mosaic-item { height: 180px; }
+      .gallery-strip { grid-template-columns: 1fr 1fr; height: auto; }
+      .gs-item { height: 160px; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+      .contact-bar { padding: 20px; gap: 24px; }
+      .slide-dots { left: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">UCR</div>
+    <div class="logo-text">
+      <div class="logo-name">Unlimited Construction & Restoration</div>
+      <div class="logo-sub">Licensed & Insured · CBC1261852 · Bradenton, FL</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="#quote" class="nav-cta">Free Estimate / Presupuesto Gratis</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-slide active" style="background-image:url('building_on_the_water.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('construct_home.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('construct_home.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('Refacing.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">BBB A+ Rated · Top 1% Florida Contractors</div>
+      <h1>From <span>Foundation</span><br>to Finish</h1>
+      <div class="hero-tagline">Unlimited Construction & Restoration</div>
+      <p>Concrete · Masonry · New Home Construction · Remodeling · Restoration. Serving Bradenton, Sarasota, Anna Maria Island and surrounding counties for over 21 years of experience, proudly rooted in Bradenton. Hablamos español.</p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn-primary">Get a Free Estimate</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-form">
+      <h3>Request a Free Estimate</h3>
+      <p class="form-sub">We'll respond within 24 hours / Respondemos en 24 horas</p>
+      <div class="bilingual-toggle">
+        <button class="lang-btn active" onclick="setLang('en', this)">🇺🇸 English</button>
+        <button class="lang-btn" onclick="setLang('es', this)">🇲🇽 Español</button>
+      </div>
+      <div class="hf-row">
+        <div class="hf-field">
+          <label id="lbl-fname">First Name</label>
+          <input type="text" id="hf-fname" placeholder="John" />
+        </div>
+        <div class="hf-field">
+          <label id="lbl-lname">Last Name</label>
+          <input type="text" id="hf-lname" placeholder="Smith" />
+        </div>
+      </div>
+      <div class="hf-field">
+        <label id="lbl-email">Email Address</label>
+        <input type="email" id="hf-email" placeholder="john@email.com" />
+      </div>
+      <div class="hf-field">
+        <label id="lbl-phone">Phone Number</label>
+        <input type="tel" id="hf-phone" placeholder="(941) 555-0100" />
+      </div>
+      <div class="hf-field">
+        <label id="lbl-service">Type of Project</label>
+        <select id="hf-service">
+          <option value="" id="opt-select">Select a service...</option>
+          <option>Concrete Work</option>
+          <option>Masonry</option>
+          <option>New Home Construction</option>
+          <option>Remodeling</option>
+          <option>Restoration</option>
+          <option>Driveway / Sidewalk</option>
+          <option>Tie Beam</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="hf-field">
+        <label id="lbl-notes">Project Details</label>
+        <textarea id="hf-notes" placeholder="Tell us about your project..."></textarea>
+      </div>
+      <button class="hf-submit" id="hf-submit-btn">Request Free Estimate →</button>
+      <div class="hf-note">
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:#7a7a74;fill:none;stroke-width:2;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your info goes directly to our team — never shared.
+      </div>
+    </div>
+  </div>
+  <div class="slide-dots">
+    <button class="dot active" data-slide="0"></button>
+    <button class="dot" data-slide="1"></button>
+    <button class="dot" data-slide="2"></button>
+    <button class="dot" data-slide="3"></button>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <svg class="t-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>BBB A+ Accredited
+  </div>
+  <div class="trust-item">
+    <svg class="t-icon" viewBox="0 0 24 24"><path d="M12 2l2 7h7l-6 4 2 7-5-4-5 4 2-7-6-4h7z"/></svg>Top 1% Florida Contractors
+  </div>
+  <div class="trust-item">
+    <svg class="t-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Licensed &amp; Insured · CBC1261852
+  </div>
+  <div class="trust-item">
+    <svg class="t-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>21 Years Serving Bradenton
+  </div>
+  <div class="trust-item">
+    <svg class="t-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Hablamos Español
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="eyebrow">What We Build</div>
+    <div class="section-title">Full Service Construction & Restoration</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="s-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h4>New Home Construction</h4>
+        <p>From footings to final finish — we build quality homes from the ground up across Manatee and Sarasota counties. Your vision, our craftsmanship.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h4>Remodeling</h4>
+        <p>Kitchen remodels, bathroom renovations, room additions and full interior transformations. We breathe new life into existing spaces.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h4>Restoration</h4>
+        <p>Storm damage, water damage and structural restoration. FEMA flood zone compliant. We restore properties to better than original condition.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <h4>Concrete & Masonry</h4>
+        <p>Foundations, tie beams, footings, slabs, driveways, sidewalks, patios and decorative concrete finishes. The structural backbone of everything we build.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></div>
+        <h4>Driveways & Flatwork</h4>
+        <p>Concrete driveways, sidewalks, patios and pool decks. Bromo finish, slick finish, salt finish and more. Durable, beautiful and built to last.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-6 8 6v10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h4>Commercial Projects</h4>
+        <p>Large scale commercial construction, tenant improvements and structural work for businesses across the Bradenton and Sarasota metro area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO MOSAIC -->
+<div class="mosaic" id="projects">
+  <div class="mosaic-item big">
+    <img src="3904_Home.jpg" alt="Current project" loading="lazy" />
+    <span class="m-label">Concrete & Masonry</span>
+  </div>
+  <div class="mosaic-item">
+    <img src="remodel.jpg" alt="Interior remodel" loading="lazy" />
+    <span class="m-label">Home Construction</span>
+  </div>
+  <div class="mosaic-item">
+    <img src="water_build.jpg" alt="Waterfront build" loading="lazy" />
+    <span class="m-label">Waterfront Build</span>
+  </div>
+  <div class="mosaic-item">
+    <img src="Trusses.jpg" alt="Roof trusses" loading="lazy" />
+    <span class="m-label">Roof Trusses</span>
+  </div>
+  <div class="mosaic-item">
+    <img src="Siding.jpg" alt="Home construction" loading="lazy" />
+    <span class="m-label">Home Construction</span>
+  </div>
+</div>
+
+<!-- CREDENTIALS -->
+<section class="alt">
+  <div class="section-inner">
+    <div class="eyebrow">Our Track Record</div>
+    <div class="section-title">Built on Experience & Trust</div>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-num">21</div>
+        <div class="cred-label">Years of construction experience in Bradenton</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">341+</div>
+        <div class="cred-label">Permitted projects completed</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">Top 1%</div>
+        <div class="cred-label">Of all licensed Florida contractors</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">A+</div>
+        <div class="cred-label">BBB rating · Accredited since 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-inner">
+    <div class="eyebrow">Simple Process</div>
+    <div class="section-title">How It Works</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-connector"></div>
+        <div class="step-num">1</div>
+        <h4>Submit Your Request</h4>
+        <p>Fill out our simple form with your project details. Free, no commitment, no pressure.</p>
+      </div>
+      <div class="step">
+        <div class="step-connector"></div>
+        <div class="step-num">2</div>
+        <h4>We Review & Contact You</h4>
+        <p>Our team reviews your project and contacts you within 24 hours to discuss the details.</p>
+      </div>
+      <div class="step">
+        <div class="step-connector"></div>
+        <div class="step-num">3</div>
+        <h4>Free On-Site Estimate</h4>
+        <p>We come to you, assess the project in person and provide a detailed written estimate.</p>
+      </div>
+      <div class="step">
+        <div class="step-connector"></div>
+        <div class="step-num">4</div>
+        <h4>We Get to Work</h4>
+        <p>Once approved we schedule your project and our experienced team delivers exceptional results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div class="gallery-strip">
+  <div class="gs-item">
+    <img src="3904_Home.jpg" alt="Current project" loading="lazy" />
+    <span class="gs-label">Current Project · Bradenton</span>
+  </div>
+  <div class="gs-item">
+    <img src="BeachHouse.jpg" alt="Beach house" loading="lazy" />
+    <span class="gs-label">Beach House</span>
+  </div>
+  <div class="gs-item">
+    <img src="Build_block.jpg" alt="Block construction" loading="lazy" />
+    <span class="gs-label">Block Construction</span>
+  </div>
+  <div class="gs-item">
+    <img src="remodel.jpg" alt="Interior remodel" loading="lazy" />
+    <span class="gs-label">Interior Remodel</span>
+  </div>
+  <div class="gs-item">
+    <img src="Refacing.jpg" alt="Commercial refacing" loading="lazy" />
+    <span class="gs-label">Commercial Refacing</span>
+  </div>
+</div>
+
+<!-- SERVICE AREA -->
+<section class="alt" id="area">
+  <div class="section-inner">
+    <div class="eyebrow">Where We Work</div>
+    <div class="section-title">Service Area</div>
+    <div class="area-grid">
+      <div class="area-tag"><h5>Bradenton</h5><p>Manatee County</p></div>
+      <div class="area-tag"><h5>Sarasota</h5><p>Sarasota County</p></div>
+      <div class="area-tag"><h5>Anna Maria Island</h5><p>Holmes Beach · Bradenton Beach</p></div>
+      <div class="area-tag"><h5>Lakewood Ranch</h5><p>Manatee County</p></div>
+      <div class="area-tag"><h5>Palmetto</h5><p>Manatee County</p></div>
+      <div class="area-tag"><h5>Ellenton</h5><p>Manatee County</p></div>
+      <div class="area-tag"><h5>Parrish</h5><p>Manatee County</p></div>
+      <div class="area-tag"><h5>Venice</h5><p>Sarasota County</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-inner">
+    <div class="eyebrow">What Clients Say</div>
+    <div class="section-title">Real Reviews from Real Clients</div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Very professional — multiple meetings to review the scope of work, the timeframe and materials. The workmanship was superb. Very friendly and thorough.</p>
+        <div class="reviewer">Michael R.</div>
+        <div class="reviewer-loc">Bradenton, FL · HomeAdvisor</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Jesus and his team did an outstanding job on our new home foundation and concrete work. On time, on budget, and the quality exceeded our expectations.</p>
+        <div class="reviewer">Patricia M.</div>
+        <div class="reviewer-loc">Sarasota, FL · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Best contractor in the area. They remodeled our entire master bathroom and kitchen. Clean, professional, and the attention to detail was incredible.</p>
+        <div class="reviewer">David T.</div>
+        <div class="reviewer-loc">Lakewood Ranch, FL · BBB</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN QUOTE FORM -->
+<div class="form-section" id="quote">
+  <div class="form-inner">
+    <div class="form-header">
+      <div class="eyebrow">Free Estimate · Presupuesto Gratis</div>
+      <h2>Start Your Project Today</h2>
+      <p>Fill out the form below and our team will review your project and be in touch within 24 hours. No obligation, no pressure.<br><em style="color:rgba(255,255,255,0.4);font-size:14px;">Llene el formulario y nos comunicaremos con usted en 24 horas.</em></p>
+    </div>
+
+    <div class="form-lang-toggle">
+      <button class="flang-btn active" onclick="setFormLang('en', this)">🇺🇸 English</button>
+      <button class="flang-btn" onclick="setFormLang('es', this)">🇲🇽 Español</button>
+    </div>
+
+    <form id="quoteForm">
+      <div class="form-grid">
+        <div class="f-field">
+          <label id="fl-fname">First Name</label>
+          <input type="text" name="fname" id="fi-fname" placeholder="John" required />
+        </div>
+        <div class="f-field">
+          <label id="fl-lname">Last Name</label>
+          <input type="text" name="lname" id="fi-lname" placeholder="Smith" required />
+        </div>
+        <div class="f-field">
+          <label id="fl-email">Email Address</label>
+          <input type="email" name="email" id="fi-email" placeholder="john@email.com" required />
+        </div>
+        <div class="f-field">
+          <label id="fl-phone">Phone Number</label>
+          <input type="tel" name="phone" id="fi-phone" placeholder="(941) 555-0100" required />
+        </div>
+        <div class="f-field">
+          <label id="fl-address">Property Address</label>
+          <input type="text" name="address" id="fi-address" placeholder="Street, City, Zip" required />
+        </div>
+        <div class="f-field">
+          <label id="fl-service">Type of Project</label>
+          <select name="service" id="fi-service" required>
+            <option value="" id="fo-select">Select a service...</option>
+            <option>Concrete Work / Trabajo de Concreto</option>
+            <option>Masonry / Mampostería</option>
+            <option>New Home Construction / Construcción Nueva</option>
+            <option>Remodeling / Remodelación</option>
+            <option>Restoration / Restauración</option>
+            <option>Driveway / Entrada</option>
+            <option>Tie Beam / Viga de Amarre</option>
+            <option>Commercial / Comercial</option>
+            <option>Other / Otro</option>
+          </select>
+        </div>
+        <div class="f-field">
+          <label id="fl-budget">Approximate Budget</label>
+          <select name="budget" id="fi-budget">
+            <option>Under $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000 – $50,000</option>
+            <option>$50,000 – $150,000</option>
+            <option>$150,000+</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="f-field">
+          <label id="fl-timeline">Timeline</label>
+          <select name="timeline" id="fi-timeline">
+            <option>As soon as possible</option>
+            <option>Within 1 month</option>
+            <option>1–3 months</option>
+            <option>3–6 months</option>
+            <option>Just planning ahead</option>
+          </select>
+        </div>
+        <div class="f-field full">
+          <label id="fl-notes">Project Description</label>
+          <textarea name="notes" id="fi-notes" placeholder="Please describe your project in as much detail as possible..."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="submit-btn" id="main-submit-btn">Submit My Free Estimate Request →</button>
+        <div class="form-note">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Your information is reviewed by our team only — never sold or shared.
+        </div>
+      </div>
+    </form>
+    <div class="success-msg" id="successMsg">
+      <h3>Thank You! / ¡Gracias!</h3>
+      <p>Your estimate request has been received. Our team will review your project and be in touch within 24 hours.<br><br><em>Su solicitud ha sido recibida. Nos comunicaremos con usted en 24 horas.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT BAR -->
+<div class="contact-bar">
+  <a href="mailto:jbarrett@cred-net.org" class="contact-item">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Request an Estimate
+  </a>
+  <a href="https://wa.me/19543306185" class="contact-item">
+    <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    WhatsApp · Hablamos Español
+  </a>
+  <div class="contact-item">
+    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Bradenton · Sarasota · AMI · FL
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Unlimited <span>Construction</span> & Restoration</div>
+  <div class="footer-mid">© 2026 Unlimited Construction & Restoration · Bradenton, FL · License CBC1261852 · All Rights Reserved</div>
+  <div class="footer-creds">
+    <span class="footer-badge">BBB A+</span>
+    <span class="footer-badge">Licensed</span>
+    <span class="footer-badge">Insured</span>
+  </div>
+</footer>
+
+<script>
+  // Slideshow
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0, timer;
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  function startTimer() { timer = setInterval(() => goTo(current + 1), 5500); }
+  function resetTimer() { clearInterval(timer); startTimer(); }
+  dots.forEach(dot => dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.slide)); resetTimer(); }));
+  startTimer();
+
+  // Bilingual labels
+  const labels = {
+    en: {
+      fname: 'First Name', lname: 'Last Name', email: 'Email Address',
+      phone: 'Phone Number', address: 'Property Address', service: 'Type of Project',
+      budget: 'Approximate Budget', timeline: 'Timeline', notes: 'Project Description',
+      submit: 'Submit My Free Estimate Request →',
+      hfSubmit: 'Request Free Estimate →',
+      hfNotes: 'Tell us about your project...',
+      hfFname: 'First name', hfLname: 'Last name'
+    },
+    es: {
+      fname: 'Nombre', lname: 'Apellido', email: 'Correo Electrónico',
+      phone: 'Número de Teléfono', address: 'Dirección de la Propiedad', service: 'Tipo de Proyecto',
+      budget: 'Presupuesto Aproximado', timeline: 'Plazo', notes: 'Descripción del Proyecto',
+      submit: 'Enviar Mi Solicitud de Presupuesto →',
+      hfSubmit: 'Solicitar Presupuesto →',
+      hfNotes: 'Cuéntenos sobre su proyecto...',
+      hfFname: 'Nombre', hfLname: 'Apellido'
+    }
+  };
+
+  function setFormLang(lang, btn) {
+    document.querySelectorAll('.flang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const l = labels[lang];
+    document.getElementById('fl-fname').textContent = l.fname;
+    document.getElementById('fl-lname').textContent = l.lname;
+    document.getElementById('fl-email').textContent = l.email;
+    document.getElementById('fl-phone').textContent = l.phone;
+    document.getElementById('fl-address').textContent = l.address;
+    document.getElementById('fl-service').textContent = l.service;
+    document.getElementById('fl-budget').textContent = l.budget;
+    document.getElementById('fl-timeline').textContent = l.timeline;
+    document.getElementById('fl-notes').textContent = l.notes;
+    document.getElementById('main-submit-btn').textContent = l.submit;
+  }
+
+  function setLang(lang, btn) {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const l = labels[lang];
+    document.getElementById('lbl-fname').textContent = l.fname;
+    document.getElementById('lbl-lname').textContent = l.lname;
+    document.getElementById('lbl-email').textContent = l.email;
+    document.getElementById('lbl-phone').textContent = l.phone;
+    document.getElementById('lbl-service').textContent = l.service;
+    document.getElementById('lbl-notes').textContent = l.notes;
+    document.getElementById('hf-submit-btn').textContent = l.hfSubmit;
+    document.getElementById('hf-notes').placeholder = l.hfNotes;
+    document.getElementById('hf-fname').placeholder = l.hfFname;
+    document.getElementById('hf-lname').placeholder = l.hfLname;
+  }
+
+  // Form submission
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('main-submit-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    /*
+      TO ENABLE EMAIL DELIVERY:
+      1. Sign up free at https://formspree.io
+      2. Create a form pointed at your screening email
+      3. Replace YOUR_FORM_ID below and uncomment the fetch block
+
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: this.fname.value + ' ' + this.lname.value,
+        email: this.email.value,
+        phone: this.phone.value,
+        address: this.address.value,
+        service: this.service.value,
+        budget: this.budget.value,
+        timeline: this.timeline.value,
+        message: this.notes.value
+      })
+    }).then(() => showSuccess()).catch(() => showSuccess());
+    */
+
+    setTimeout(showSuccess, 900);
+    function showSuccess() {
+      document.getElementById('quoteForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
