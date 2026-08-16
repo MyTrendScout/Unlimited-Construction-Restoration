@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construction Tips & Insights Blog | Unlimited Construction & Restoration | Bradenton, FL</title>
+  <meta name="description" content="Practical guides on remodeling costs, concrete, masonry, restoration and new home construction for Bradenton, Sarasota and the Gulf Coast, from licensed contractor Unlimited Construction & Restoration." />
+  <link rel="canonical" href="https://www.unlimitedconstructionrestoration.com/blog/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2f4a; --navy-mid:#243d5e; --navy-light:#2e4d76;
+      --amber:#E07B24; --amber-light:#f08c35; --amber-pale:#fdf0e3;
+      --text:#1c1c1a; --text-mid:#444440; --text-muted:#7a7a74;
+      --border: rgba(0,0,0,0.1); --bg:#f8f6f2; --bg-card:#ffffff;
+      --radius:8px; --radius-lg:14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Source Sans 3', sans-serif; color:var(--text); background:var(--bg); line-height:1.6; overflow-x:hidden; }
+    nav { position: fixed; top:0; left:0; right:0; z-index:200; background:rgba(26,47,74,0.95); backdrop-filter:blur(16px); padding:0 52px; height:68px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .logo-mark { width:42px; height:42px; background:var(--amber); border-radius:6px; display:flex; align-items:center; justify-content:center; font-family:'Oswald', sans-serif; font-size:18px; font-weight:700; color:#fff; }
+    .logo-text { display:flex; flex-direction:column; }
+    .logo-name { font-family:'Oswald', sans-serif; font-size:16px; font-weight:600; color:#fff; letter-spacing:0.5px; line-height:1.2; }
+    .logo-sub { font-size:11px; color:rgba(255,255,255,0.55); letter-spacing:1px; text-transform:uppercase; }
+    .nav-links { display:flex; gap:32px; list-style:none; }
+    .nav-links a { font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none; transition:color .2s; letter-spacing:0.3px; }
+    .nav-links a:hover { color:var(--amber); }
+    .nav-cta { background:var(--amber); color:#fff; border:none; border-radius:var(--radius); padding:10px 22px; font-size:14px; font-weight:500; font-family:'Source Sans 3', sans-serif; cursor:pointer; text-decoration:none; transition:background .2s, transform .15s; letter-spacing:0.3px; }
+    .nav-cta:hover { background:var(--amber-light); transform:translateY(-1px); }
+    footer { background:#0f1c2d; padding:36px 52px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .footer-logo { font-family:'Oswald', sans-serif; font-size:18px; color:#fff; font-weight:600; }
+    .footer-logo span { color:var(--amber); }
+    .footer-mid { font-size:13px; color:rgba(255,255,255,0.35); text-align:center; }
+    .footer-creds { display:flex; gap:16px; align-items:center; }
+    .footer-badge { font-size:12px; color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.15); border-radius:4px; padding:4px 10px; }
+    a { color: var(--amber); }
+    @media (max-width: 960px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+    }
+
+    .blog-hero { padding: 150px 52px 50px; background: var(--navy); text-align: center; }
+    .blog-hero .eyebrow { color: var(--amber); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:14px; }
+    .blog-hero h1 { font-family:'Oswald', sans-serif; font-size:44px; font-weight:700; color:#fff; margin-bottom:14px; }
+    .blog-hero p { color: rgba(255,255,255,0.6); font-size:16px; max-width:600px; margin:0 auto; }
+    .blog-grid-wrap { padding: 60px 52px 90px; max-width: 1200px; margin: 0 auto; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .blog-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+    .blog-card-img { height: 170px; background-size: cover; background-position: center; background-color: var(--navy-light); }
+    .blog-card-body { padding: 20px; }
+    .blog-card-date { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .blog-card h3 { font-family:'Oswald', sans-serif; font-size: 17px; color: var(--navy); font-weight: 600; margin-bottom: 8px; line-height:1.3; }
+    .blog-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    @media (max-width: 960px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-hero { padding: 110px 20px 40px; }
+      .blog-hero h1 { font-size: 30px; }
+      .blog-grid-wrap { padding: 40px 20px; }
+    }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-mark">UCR</div>
+    <div class="logo-text">
+      <div class="logo-name">Unlimited Construction & Restoration</div>
+      <div class="logo-sub">Licensed &amp; Insured · CBC1261852 · Bradenton, FL</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#projects">Projects</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#area">Service Area</a></li>
+    <li><a href="/#reviews">Reviews</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <a href="/#quote" class="nav-cta">Free Estimate / Presupuesto Gratis</a>
+</nav>
+
+<div class="blog-hero">
+  <div class="eyebrow">From the Field</div>
+  <h1>Construction Tips & Insights</h1>
+  <p>Practical, Florida-specific guides on remodeling, concrete, masonry, restoration and new construction from Bradenton's top 1% rated contractor.</p>
+</div>
+
+<div class="blog-grid-wrap">
+  <div class="blog-grid">
+    
+    <a href="/blog/how-to-estimate-remodeling-costs.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/87be5a91-729e-4e48-9906-6350aa6635e8/27f281d7-9433-4f94-b3b2-b3424f2a699d.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">August 16, 2026</div>
+        <h3>How to Estimate Remodeling Costs Before You Build</h3>
+        <p>Learn how to estimate remodeling costs with a practical Florida contractor checklist for scope, labor, permits, materials, contingencies, and clear bids.</p>
+      </div>
+    </a>
+    <a href="/blog/load-bearing-wall-removal-what-comes-first.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/87be5a91-729e-4e48-9906-6350aa6635e8/5078ac9f-1cde-41dc-8b21-5cbb99ab69c1.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">August 14, 2026</div>
+        <h3>Load Bearing Wall Removal: What Comes First</h3>
+        <p>Load bearing wall removal takes engineering, permits, and precise execution. See what local Bradenton and Sarasota property owners should expect before work begins.</p>
+      </div>
+    </a>
+    <a href="/blog/how-much-does-block-construction-cost-florida.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/87be5a91-729e-4e48-9906-6350aa6635e8/841a8284-f544-4883-907a-6bbcaeebab47.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">August 12, 2026</div>
+        <h3>How Much Does Block Construction Cost in Florida?</h3>
+        <p>How much does block construction cost? See Florida pricing factors for CMU walls, additions, and homes, from permits and footings to finish quality.</p>
+      </div>
+    </a>
+    <a href="/blog/how-long-does-home-remodeling-take-florida.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/87be5a91-729e-4e48-9906-6350aa6635e8/c4443670-1ea9-4e3b-a793-48fc547c32dd.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">August 10, 2026</div>
+        <h3>How Long Does Home Remodeling Take in Florida?</h3>
+        <p>How long does home remodeling take? Get practical timelines for Florida kitchens, baths, additions, permits, inspections, and smarter project planning.</p>
+      </div>
+    </a>
+    <a href="/blog/licensed-contractor-for-flood-repairs.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/87be5a91-729e-4e48-9906-6350aa6635e8/a7ed4bf6-49b2-491e-9556-e01f5319b682.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">August 8, 2026</div>
+        <h3>How to Hire a Licensed Contractor for Flood Repairs</h3>
+        <p>Need a licensed contractor for flood repairs in Bradenton or Sarasota? Learn what to verify, when to call, and how to protect your property after a flood.</p>
+      </div>
+    </a>
+    <a href="/blog/best-hurricane-resistant-home-features.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/87be5a91-729e-4e48-9906-6350aa6635e8/6f8d5581-6e9d-45cd-9957-49a8f20baa58.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">August 6, 2026</div>
+        <h3>Best Hurricane Resistant Home Features for Florida</h3>
+        <p>Learn the best hurricane resistant home features for Gulf Coast properties, from roof connections to impact protection, drainage, and code-ready details.</p>
+      </div>
+    </a>
+    <a href="/blog/how-to-choose-a-concrete-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/03268891-7000-43e9-80a5-2c4497a15833.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">August 4, 2026</div>
+        <h3>How to Choose a Concrete Contractor With Confidence</h3>
+        <p>Learn how to choose a concrete contractor in Bradenton and Sarasota with the right license, scope, schedule, and workmanship standards for lasting results.</p>
+      </div>
+    </a>
+    <a href="/blog/what-permits-are-needed-for-remodeling-florida.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/93698b81-1799-49c4-b835-7a6cd170c51b.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">August 2, 2026</div>
+        <h3>What Permits Are Needed for Remodeling in Florida?</h3>
+        <p>What permits are needed for remodeling in Florida? Learn which projects trigger review, how local codes affect timing, and how a licensed contractor helps.</p>
+      </div>
+    </a>
+    <a href="/blog/block-construction-vs-wood-framing-florida.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/64e0b498-d5a6-4dd1-9db2-f315201e25f3.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 31, 2026</div>
+        <h3>Block Construction vs Wood Framing in Florida</h3>
+        <p>Compare block construction vs wood framing for Florida homes. Learn how cost, storm resistance, insulation, and design affect your building choice now.</p>
+      </div>
+    </a>
+    <a href="/blog/best-kitchen-remodel-upgrades.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/1968215c-b57e-4960-b83e-df7ac579377d.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 29, 2026</div>
+        <h3>10 Best Kitchen Remodel Upgrades That Last</h3>
+        <p>Planning the best kitchen remodel upgrades? Choose improvements that add daily function, lasting value, and Gulf Coast-ready durability to your coastal home.</p>
+      </div>
+    </a>
+    <a href="/blog/how-to-plan-a-home-remodel.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/4cf6ccd7-ef79-4f97-a510-2eb49725bfc4.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 27, 2026</div>
+        <h3>How to Plan a Home Remodel Without Costly Surprises</h3>
+        <p>Learn how to plan a home remodel with a clear scope, realistic budget, permits, materials, and a contractor built for Florida's Gulf Coast conditions early.</p>
+      </div>
+    </a>
+    <a href="/blog/guide-to-concrete-slab-foundations-florida.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/401da387-e0b5-467e-bfb8-9fe77db37913.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 25, 2026</div>
+        <h3>Guide to Concrete Slab Foundations in Florida</h3>
+        <p>Our guide to concrete slab foundations explains site prep, reinforcement, moisture control, and inspections for durable Florida homes and built additions.</p>
+      </div>
+    </a>
+    <a href="/blog/how-to-choose-trusted-masonry-contractors-near-me.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/44d9a18d-84c6-42e5-a3b8-f00363cfbe84.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 23, 2026</div>
+        <h3>How to Choose Trusted Masonry Contractors Near Me</h3>
+        <p>Find masonry contractors near me with licensed local experience, clear estimates, and structural skill for durable Florida brick, block, and stone work.</p>
+      </div>
+    </a>
+    <a href="/blog/signs-of-foundation-settlement.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/abd3be8d-5ac2-497c-a88d-200b3a19272a.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 21, 2026</div>
+        <h3>7 Signs of Foundation Settlement in Florida Homes</h3>
+        <p>Learn the signs of foundation settlement in Florida homes, what can cause them, and when to call a licensed contractor for a structural evaluation soon.</p>
+      </div>
+    </a>
+    <a href="/blog/guide-to-flood-zone-construction-florida.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/46853e11-9431-40f3-933e-66ad416b7d3f.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 19, 2026</div>
+        <h3>Guide to Flood Zone Construction in Florida</h3>
+        <p>A practical guide to flood zone construction for Gulf Coast properties, covering elevation, permits, materials, drainage, and smarter building decisions.</p>
+      </div>
+    </a>
+    <a href="/blog/how-to-build-a-custom-home-florida-gulf-coast.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/58345cf0-a981-44e6-9731-6028c36d919a.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 17, 2026</div>
+        <h3>How to Build a Custom Home on Florida's Gulf Coast</h3>
+        <p>Learn how to build a custom home on Florida's Gulf Coast, from site planning and permits to storm-ready systems, inspections, and final finishes correctly.</p>
+      </div>
+    </a>
+    <a href="/blog/what-does-a-general-contractor-do.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/1414a7b2-a52a-4035-9482-1f02c6453412.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 15, 2026</div>
+        <h3>What Does a General Contractor Do for You?</h3>
+        <p>What does a general contractor do? Learn how permits, scheduling, and quality control keep your build or remodel on track, compliant, and built to last.</p>
+      </div>
+    </a>
+    <a href="/blog/new-home-construction-florida.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/033aea94-0741-41fb-be2f-60bc0fdc6b4e.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 13, 2026</div>
+        <h3>New Home Construction Built for Florida Living</h3>
+        <p>Plan new home construction for Florida conditions, code compliance, and lasting value with a clear process from site review through final finishes today.</p>
+      </div>
+    </a>
+    <a href="/blog/commercial-tenant-improvement-contractor-guide.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/9f72f63b-8abc-4903-9011-4c29cba6a1ee.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 11, 2026</div>
+        <h3>Commercial Tenant Improvement Contractor Guide</h3>
+        <p>Choose a commercial tenant improvement contractor in Bradenton and Sarasota who can manage permits, structural work, finishes, and schedules with care well.</p>
+      </div>
+    </a>
+    <a href="/blog/water-damage-structural-repair-explained.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/bc3245d5-2992-4fd6-9d58-db7ad85fd7ac.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 9, 2026</div>
+        <h3>Water Damage Structural Repair Explained</h3>
+        <p>Learn how water damage structural repair works, what to inspect first, and when framing, concrete, masonry, and finishes need expert repair.</p>
+      </div>
+    </a>
+    <a href="/blog/choosing-a-home-remodeling-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/7a8d1e96-7119-4ab7-94e5-6cd8afdfd863.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 7, 2026</div>
+        <h3>Choosing a Home Remodeling Contractor</h3>
+        <p>Learn how to choose a home remodeling contractor with confidence, from licensing and estimates to workmanship, scheduling, and code compliance.</p>
+      </div>
+    </a>
+    <a href="/blog/flood-zone-home-construction-that-lasts.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/b69044fd-2048-4840-b334-51b4325dfb3f.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 5, 2026</div>
+        <h3>Flood Zone Home Construction That Lasts</h3>
+        <p>Flood zone home construction requires smart design, code compliance, and durable materials to protect your investment on Florida's coast.</p>
+      </div>
+    </a>
+    <a href="/blog/concrete-foundations-built-for-florida.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/f083b56a-1f45-4030-83e6-0a7ed8fd6e22.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 3, 2026</div>
+        <h3>Concrete Foundations Built for Florida</h3>
+        <p>Concrete foundations support every structure. Learn how soil, water, design, and workmanship affect long-term performance in Florida.</p>
+      </div>
+    </a>
+    <a href="/blog/choosing-storm-damage-restoration-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/b5ebf06b-fea7-400b-bca3-bb5e23761d61.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">July 1, 2026</div>
+        <h3>Choosing a Storm Damage Restoration Contractor</h3>
+        <p>Learn how to choose a storm damage restoration contractor for Florida homes and businesses, with clear guidance on scope, codes, and repairs.</p>
+      </div>
+    </a>
+    <a href="/blog/choose-bathroom-renovation-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/d491bccd-a1e6-4fc4-b34b-f15ea0e19f69.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 29, 2026</div>
+        <h3>How to Choose a Bathroom Renovation Contractor</h3>
+        <p>Choosing a bathroom renovation contractor means checking licenses, permits, pricing, timelines, and workmanship before any demolition begins.</p>
+      </div>
+    </a>
+    <a href="/blog/how-to-choose-a-kitchen-remodeling-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/717deca4-b174-4d88-9d75-84388568823b.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 28, 2026</div>
+        <h3>How to Choose a Kitchen Remodeling Contractor</h3>
+        <p>Need a kitchen remodeling contractor? Learn what to look for, what to ask, and how to choose a licensed professional for lasting results.</p>
+      </div>
+    </a>
+    <a href="/blog/choosing-a-whole-home-remodeling-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/ed8f9efc-aca2-43c0-be25-f62325544ee8.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 27, 2026</div>
+        <h3>Choosing a Whole Home Remodeling Contractor</h3>
+        <p>Learn how to choose a whole home remodeling contractor for planning, budgeting, permits, structure, finishes, and long-term value.</p>
+      </div>
+    </a>
+    <a href="/blog/choosing-a-new-home-construction-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/67480700-b813-400f-9c6f-4231c374d772.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 26, 2026</div>
+        <h3>Choosing a New Home Construction Contractor</h3>
+        <p>Choosing a new home construction contractor means checking licensing, local experience, scope control, and finish quality before work begins.</p>
+      </div>
+    </a>
+    <a href="/blog/choosing-a-concrete-flatwork-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/e7e20440-dd91-4e59-ac23-3e8072d9503d.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 25, 2026</div>
+        <h3>Choosing a Concrete Flatwork Contractor</h3>
+        <p>Choosing a concrete flatwork contractor means checking experience, drainage, prep, and finish quality to get durable results in Florida.</p>
+      </div>
+    </a>
+    <a href="/blog/concrete-driveway-installation-that-lasts.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/b715b9b5-d4ab-4b8d-8658-1f78f516296f.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 24, 2026</div>
+        <h3>Concrete Driveway Installation That Lasts</h3>
+        <p>Concrete driveway installation done right means proper base prep, drainage, reinforcement, and finishing for a durable, code-compliant surface.</p>
+      </div>
+    </a>
+    <a href="/blog/tie-beam-construction-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/8dbfdd4c-9116-42f3-b7bd-2d45118d82f0.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 23, 2026</div>
+        <h3>Tie Beam Construction Contractor: What Matters</h3>
+        <p>Need a tie beam construction contractor? Learn what tie beams do, when they matter, and how to choose a licensed team for lasting results.</p>
+      </div>
+    </a>
+    <a href="/blog/choosing-concrete-slab-foundation-contractor.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/19ea3395-4b21-4c07-9108-c89425a9a043.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 22, 2026</div>
+        <h3>Choosing a Concrete Slab Foundation Contractor</h3>
+        <p>Need a concrete slab foundation contractor? Learn what to look for, what affects quality, and how to choose the right team for lasting results.</p>
+      </div>
+    </a>
+    <a href="/blog/brick-and-block-construction-method.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/3b74d96e-b05d-4e46-9992-556a2509a346.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 21, 2026</div>
+        <h3>Brick and Block Construction Method Explained</h3>
+        <p>Learn how the brick and block construction method works, where it performs best, and what to expect for strength, cost, moisture control, and finish.</p>
+      </div>
+    </a>
+    <a href="/blog/brick-and-block-construction-vs-timber-frame.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/298e97b9-2fd7-4d7d-b821-21e1a03e34ac.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 20, 2026</div>
+        <h3>Brick and Block Construction vs Timber Frame</h3>
+        <p>Brick and block construction vs timber frame comes down to durability, cost, speed, and code needs. See which build method fits your project.</p>
+      </div>
+    </a>
+    <a href="/blog/brick-and-block-construction-advantages.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/a0475a05-ad93-4cb3-ba0e-f2ff6d14308f.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 19, 2026</div>
+        <h3>Brick and Block Construction Advantages</h3>
+        <p>Learn the brick and block construction advantages that matter most for Florida homes and commercial buildings, from strength to long-term value.</p>
+      </div>
+    </a>
+    <a href="/blog/what-is-brick-and-block-construction.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/01788560-0008-4b97-b2db-36967138e55a.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 18, 2026</div>
+        <h3>What Is Brick and Block Construction?</h3>
+        <p>Learn what is brick and block construction, how it works, where it performs best, and why it remains a durable choice for Florida homes and buildings.</p>
+      </div>
+    </a>
+    <a href="/blog/what-is-masonry-work-in-construction.html" class="blog-card">
+      <div class="blog-card-img" style="background-image:url('https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/e69abb23-3c76-40f2-81a8-c108f5fb6bab/0e364945-bec4-4753-aa55-9cf995b92d31.webp')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-date">June 17, 2026</div>
+        <h3>What Is Masonry Work in Construction?</h3>
+        <p>Learn what is masonry work in construction, how it supports strength, durability, and finish quality, and where it fits in residential projects.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Unlimited <span>Construction</span> & Restoration</div>
+  <div class="footer-mid">&copy; 2026 Unlimited Construction & Restoration &middot; Bradenton, FL &middot; License CBC1261852 &middot; All Rights Reserved<br><span style="opacity:0.4; font-size:11px;">Developed &amp; managed by <a href="https://takeholdmedia.com" target="_blank" style="color:inherit;">TakeHold Media</a></span></div>
+  <div class="footer-creds">
+    <span class="footer-badge">BBB A+</span>
+    <span class="footer-badge">Licensed</span>
+    <span class="footer-badge">Insured</span>
+  </div>
+</footer>
+</body>
+</html>
