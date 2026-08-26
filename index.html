@@ -104,6 +104,40 @@
     .nav-links a:hover { color: var(--amber); }
     .nav-cta { background: var(--amber); color: #fff; border: none; border-radius: var(--radius); padding: 10px 22px; font-size: 14px; font-weight: 500; font-family: 'Source Sans 3', sans-serif; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s; letter-spacing: 0.3px; }
     .nav-cta:hover { background: var(--amber-light); transform: translateY(-1px); }
+    .nav-cta { white-space: nowrap; }
+    .cta-short { display: none; }
+
+    /* MOBILE NAV */
+    .nav-toggle {
+      display: none; background: none; border: 0; padding: 8px; margin-left: 6px;
+      cursor: pointer; border-radius: 6px; line-height: 0;
+    }
+    .nav-toggle:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: transform .25s, opacity .2s; }
+    .nav-toggle span + span { margin-top: 6px; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .mobile-panel {
+      display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 199;
+      background: rgba(26,47,74,0.98); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      max-height: calc(100vh - 68px); overflow-y: auto;
+      transform: translateY(-8px); opacity: 0; pointer-events: none;
+      transition: opacity .22s ease, transform .22s ease;
+    }
+    .mobile-panel.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .mobile-panel ul { list-style: none; padding: 8px 0 14px; margin: 0; }
+    .mobile-panel a {
+      display: block; padding: 15px 20px; font-size: 16px; text-decoration: none;
+      color: rgba(255,255,255,0.88); border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .mobile-panel a:active { background: rgba(255,255,255,0.06); }
+    .mobile-panel .mp-call {
+      display: block; margin: 14px 20px 4px; padding: 14px; text-align: center;
+      background: var(--amber); color: #fff; border-radius: var(--radius);
+      font-weight: 600; font-size: 16px; text-decoration: none; border-bottom: 0;
+    }
 
     /* HERO */
     .hero {
@@ -317,6 +351,15 @@
     @media (max-width: 960px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .mobile-panel { display: block; }
+      .nav-cta { padding: 9px 13px; font-size: 13px; }
+      .cta-long { display: none; }
+      .cta-short { display: inline; }
+      .logo-name { font-size: 13px; max-width: 130px; }
+      .logo-mark { width: 34px; height: 34px; font-size: 15px; }
+      nav { gap: 8px; }
+      .logo-sub { display: none; }
       .hero-content { padding: 0 20px; }
       .hero h1 { font-size: 42px; }
       section { padding: 56px 20px; }
@@ -361,8 +404,27 @@
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="/blog/">Blog</a></li>
   </ul>
-  <a href="#quote" class="nav-cta">Free Estimate / Presupuesto Gratis</a>
+  <div style="display:flex;align-items:center">
+    <a href="#quote" class="nav-cta"><span class="cta-long">Free Estimate / Presupuesto Gratis</span><span class="cta-short">Free Estimate</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+
+<!-- MOBILE NAV PANEL -->
+<div class="mobile-panel" id="mobile-panel">
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="#quote">Free Estimate / Presupuesto Gratis</a></li>
+  </ul>
+  <a href="tel:+19413459275" class="mp-call">Call (941) 345-9275</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -772,6 +834,33 @@
 </footer>
 
 <script>
+// Mobile nav
+(function () {
+  var btn = document.getElementById('nav-toggle');
+  var panel = document.getElementById('mobile-panel');
+  if (!btn || !panel) return;
+  function setOpen(open) {
+    panel.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setOpen(panel.classList.contains('open') === false);
+  });
+  panel.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') setOpen(false);
+  });
+  document.addEventListener('click', function (e) {
+    if (panel.classList.contains('open') && !panel.contains(e.target) && e.target !== btn) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 960) setOpen(false);
+  });
+})();
   // Slideshow
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.dot');
