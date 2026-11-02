@@ -29,33 +29,7 @@
     ],
     "hasCredential": "CBC1261852",
     "priceRange": "$$",
-    "openingHours": "Mo-Fr 08:00-17:00",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "3",
-      "bestRating": "5"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "author": { "@type": "Person", "name": "Michael R." },
-        "reviewBody": "Very professional — multiple meetings to review the scope of work, the timeframe and materials. The workmanship was superb. Very friendly and thorough."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "author": { "@type": "Person", "name": "Patricia M." },
-        "reviewBody": "Jesus and his team did an outstanding job on our new home foundation and concrete work. On time, on budget, and the quality exceeded our expectations."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-        "author": { "@type": "Person", "name": "David T." },
-        "reviewBody": "Best contractor in the area. They remodeled our entire master bathroom and kitchen. Clean, professional, and the attention to detail was incredible."
-      }
-    ]
+    "openingHours": "Mo-Fr 08:00-17:00"
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -682,23 +656,24 @@
     <div class="reviews-grid">
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p class="review-text">Very professional — multiple meetings to review the scope of work, the timeframe and materials. The workmanship was superb. Very friendly and thorough.</p>
-        <div class="reviewer">Michael R.</div>
-        <div class="reviewer-loc">Bradenton, FL · HomeAdvisor</div>
+        <p class="review-text">Can’t say enough about Jesus and Unlimited Construction. They just completed today our 2 car garage in 24 days. Jesus delivered what he promised and even helped with other miscellaneous items around the house. Very reliable and excellent workmanship. … Lastly Jesus always picks up the phone which is a basic but rare quality to find nowadays.</p>
+        <div class="reviewer">Adri Ventures</div>
+        <div class="reviewer-loc">Google review</div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p class="review-text">Jesus and his team did an outstanding job on our new home foundation and concrete work. On time, on budget, and the quality exceeded our expectations.</p>
-        <div class="reviewer">Patricia M.</div>
-        <div class="reviewer-loc">Sarasota, FL · Google</div>
+        <p class="review-text">Wow, Jesus is terrific. He’s super thorough, well-liked at the county, and a really nice guy. He came through in a pinch and made everything easy. Thanks, Jesus, to you and your team.</p>
+        <div class="reviewer">Missy Mulloy</div>
+        <div class="reviewer-loc">Google review</div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p class="review-text">Best contractor in the area. They remodeled our entire master bathroom and kitchen. Clean, professional, and the attention to detail was incredible.</p>
-        <div class="reviewer">David T.</div>
-        <div class="reviewer-loc">Lakewood Ranch, FL · BBB</div>
+        <p class="review-text">We hired Unlimited Construction from a set of 4 companies I personally contacted. … These guys worked super fast but at the same time they were careful and didn’t cut any corners. … I’d recommend these guys to anyone looking for Concrete work in the area.</p>
+        <div class="reviewer">Miguel Elasmar</div>
+        <div class="reviewer-loc">Google review</div>
       </div>
     </div>
+    <p style="text-align:center;margin-top:24px"><a href="https://maps.google.com/?cid=1591249901092576833" target="_blank" rel="noopener">Read all our reviews on Google →</a></p>
   </div>
 </section>
 
@@ -938,7 +913,16 @@
         timeline: this.timeline.value,
         message: this.notes.value
       })
-    }).then(() => showSuccess()).catch(() => showSuccess());
+    }).then((r) => {
+      if (!r.ok) throw new Error('not sent');
+      if (window.siteTap) window.siteTap('submit');
+      showSuccess();
+    }).catch(() => {
+      // Never tell someone it was sent when it wasn't: the lead would be lost.
+      btn.disabled = false;
+      btn.textContent = 'Try again';
+      alert('Sorry, that did not go through. Please try again, or call or email us below.');
+    });
 
     function showSuccess() {
       document.getElementById('quoteForm').style.display = 'none';
@@ -946,5 +930,6 @@
     }
   });
 </script>
+<script src="/tap.js" defer></script>
 </body>
 </html>
